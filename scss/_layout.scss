@@ -1,0 +1,149 @@
+.home-page {
+    background: $home-image;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: rgba($color-primary, $background-opacity);
+    }
+
+    &__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    &__content-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        height: 16rem;
+    }
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.navigation {
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+
+    &__menu {
+        width: 100%;
+        height: 70%;
+        background-color: darken($color-primary, 10);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.4rem;
+        list-style: none;
+
+        @include easeOut;
+        transform: translate(100%, 0);
+
+    }
+
+    &__item {
+        margin-bottom: 2rem;
+        @include easeOut;
+        transform: translate(60rem, 0);
+
+        @for $x from 1 through 4 {
+            &:nth-child(#{$x}) {
+                transition-delay: $x * 0.1s;
+            }
+        }
+
+
+        &--active a {
+            color: $color-secondary;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1rem 1.4rem;
+        color: set-text-color($color-primary);
+        cursor: pointer;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+
+}
+
+.branding {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lighten($color-primary, 4);
+    @include easeOut;
+
+    transform: translate(-100%, 0);
+
+    &__portrait {
+        height: 15rem;
+        width: 15rem;
+        background-image: url(../img/mypic.jpg);
+        background-size: cover;
+        background-position: top;
+        border-radius: 50%;
+        border: 3px solid $color-secondary;
+    }
+}
+
+.menu-shown {
+    .branding {
+        transform: translate(0, 0);
+    }
+
+    .navigation__menu {
+        transform: translate(0, 0);
+    }
+
+    .navigation__item {
+        transform: translate(0, 0);
+    }
+
+}
+
+.icons {
+    margin-top: 4rem;
+
+    &__link,
+    &__link:link,
+    &__link:visited {
+        color: #fff;
+        padding: 1rem;
+        text-decoration: none;
+        line-height: 1;
+        @include easeOut;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}

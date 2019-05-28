@@ -1,0 +1,68 @@
+$color-primary: #444;
+$color-secondary: #eece1a;
+
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.9;
+
+//Functions & mixins
+
+@function set-text-color($color) {
+    @if(lightness($color)>40) {
+        @return #333;
+    }
+
+    @else {
+        @return #fff;
+    }
+}
+
+@mixin easeOut {
+    transition: all 0.4s ease-out;
+}
+
+//Basic reset
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    background: $color-primary;
+    color: set-text-color($color-primary);
+
+}
+
+html,
+body {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

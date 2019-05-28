@@ -1,0 +1,98 @@
+.burger {
+    z-index: 3;
+    position: fixed;
+    top: 3.5rem;
+    right: 3.5rem;
+    padding: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    // transition: all 0.3s ease;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+
+    &__wrapper {
+        width: 4rem;
+        height: 2.4rem;
+        position: relative;
+    }
+
+    &__line {
+        top: 50%;
+        margin-top: -2px;
+
+        &,
+        &::after,
+        &::before {
+            display: inline-block;
+            background-color: #fff;
+            width: 100%;
+            height: 4px;
+            border-radius: 4px;
+            position: absolute;
+
+            transition-property: transform;
+            transition-duration: 0.22s;
+            transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+        }
+
+        &::before {
+            content: "";
+            top: -1rem;
+            transition: top 0.1s 0.25s ease-in,
+                opacity 0.1s ease-in;
+        }
+
+        &::after {
+            content: "";
+            bottom: -1rem;
+            transition: bottom 0.1s 0.25s ease-in,
+                transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+    }
+
+    &.is-active {
+
+        .burger__line {
+            transform: rotate(225deg);
+            transition-delay: 0.1s;
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            &::before {
+                top: 0;
+                opacity: 0;
+                transition: top 0.1s ease-out,
+                    opacity 0.1s 0.12s ease-out;
+            }
+
+            &::after {
+                bottom: 0;
+                transform: rotate(-90deg);
+                transition: bottom 0.1s ease-out,
+                    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            }
+        }
+
+
+    }
+}
+
+.heading-primary {
+    font-size: 5.4rem;
+}
+
+.heading-secondary {
+    font-size: 2.2rem;
+    text-align: center;
+    background-color: rgba($color-primary, 0.4);
+    display: inline-block;
+    max-width: 80%;
+    padding: .2rem 1rem;
+}
