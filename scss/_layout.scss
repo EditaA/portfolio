@@ -23,20 +23,23 @@
         overflow: hidden;
     }
 
-    &__content-wrapper {
+    &__intro-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         text-align: center;
         height: 16rem;
+        max-width: 80%;
     }
 }
 
 .header {
     position: fixed;
+    top: 0;
     width: 100%;
     height: 100vh;
+    display: none;
 }
 
 .navigation {
@@ -146,4 +149,129 @@
             color: $color-secondary;
         }
     }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    max-width: 96rem;
+}
+
+.about-page {
+    // &__content {}
+
+    &__bio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img {
+        width: 20rem;
+        height: 20rem;
+        border: 3px solid $color-secondary;
+        border-radius: 50%;
+        margin-bottom: 3rem;
+    }
+
+    &__bio-text {
+        // text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 5rem;
+
+    }
+
+    &__profile {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+}
+
+.qualification {
+    padding: 1rem 2rem;
+    background-color: lighten($color-primary, 5);
+    border-bottom: 3px solid $color-secondary;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        margin: 0.5rem 0 0.2rem;
+        font-size: 2rem;
+        text-transform: capitalize;
+    }
+
+    &__dates {
+        font-size: 1.4rem;
+        color: rgb(238, 238, 238);
+    }
+
+    &__text {
+        margin: 2rem 0;
+        font-size: 1.4rem;
+    }
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+
+
+    // &__details {}
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+        background: lighten($color-primary, 10);
+        border-radius: 0.5rem;
+    }
+
+    &__item-wrapper {
+        margin-left: 2rem;
+
+    }
+
+    &__item-title {
+        font-size: 1.6rem;
+        text-transform: capitalize;
+        color: $color-secondary;
+    }
+
+}
+
+.contact {
+
+    &__form {
+        margin-bottom: 4rem;
+        width: 100%;
+    }
+}
+
+.contact-page {
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.4rem;
+    background-color: darken($color-primary, 10);
 }

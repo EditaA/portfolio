@@ -93,6 +93,37 @@
     text-align: center;
     background-color: rgba($color-primary, 0.4);
     display: inline-block;
-    max-width: 80%;
     padding: .2rem 1rem;
+}
+
+.intro-wrapper {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+// .text-center {
+//     text-align: center;
+// }
+
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    position: relative;
+    font-size: 1.8rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid $color-secondary;
+    color: $color-secondary;
+    @include easeOut;
+
+
+    &:hover {
+        background-color: $color-secondary;
+        color: $color-primary;
+    }
 }
