@@ -407,14 +407,18 @@ a {
 .burger {
   z-index: 3;
   position: fixed;
-  top: 3.5rem;
-  right: 3.5rem;
+  top: 2.6rem;
+  right: 2.6rem;
   padding: 1rem;
   background-color: transparent;
   cursor: pointer;
   transition-property: opacity;
   transition-duration: 0.15s;
   transition-timing-function: ease; }
+  @media only screen and (min-width: 43.75em) {
+    .burger {
+      right: 3.6rem;
+      top: 3.6rem; } }
   .burger:hover {
     opacity: 0.8; }
   .burger__wrapper {
@@ -466,9 +470,13 @@ a {
   padding: .2rem 1rem; }
 
 .intro-wrapper {
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
   text-align: center; }
+  @media only screen and (min-width: 43.75em) {
+    .intro-wrapper {
+      margin-top: 7rem;
+      margin-bottom: 5rem; } }
 
 .btn {
   text-transform: uppercase;
@@ -756,8 +764,7 @@ a {
     .work-page__projects {
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
-      margin-top: 7rem; } }
+      justify-content: space-between; } }
   @media only screen and (min-width: 75em) {
     .work-page__projects {
       flex-direction: row;
@@ -769,7 +776,8 @@ a {
 .project {
   width: 100%;
   background-color: #5e5e5e;
-  padding: 1rem; }
+  padding: 1rem;
+  position: relative; }
   @media only screen and (min-width: 43.75em) {
     .project {
       flex-basis: 49%;
@@ -780,9 +788,51 @@ a {
   .project:not(:last-child) {
     margin-bottom: 2rem; }
   .project__figure {
-    padding: 1rem; }
+    position: relative;
+    height: 100%;
+    overflow: hidden; }
+  .project__figure:hover .project__img {
+    transform: scale(1.2); }
   .project__img {
-    border: 3px solid #fff; }
+    transform: scale(1);
+    transition: all 0.4s ease-out; }
+  .project__overlay {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transition: all 0.4s ease-out; }
+  .project__new-project {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #444;
+    color: #fff;
+    visibility: visible;
+    opacity: 0.6;
+    text-align: center;
+    font-size: 6rem;
+    text-transform: uppercase;
+    transition: all 0.4s ease-out; }
+    @media only screen and (min-width: 56.25em) {
+      .project__new-project {
+        font-size: 7rem;
+        visibility: hidden;
+        opacity: 0; } }
+    @media only screen and (min-width: 75em) {
+      .project__new-project {
+        font-size: 4rem; } }
+  .project__overlay:hover .project__new-project {
+    visibility: visible;
+    opacity: 0.6; }
+  .project__details {
+    margin-top: 5%;
+    font-size: 1.4rem; }
+    @media only screen and (min-width: 43.75em) {
+      .project__details {
+        font-size: 1.8rem;
+        margin-top: 50%; } }
   .project__links-wrapper {
     display: flex;
     justify-content: center; }
