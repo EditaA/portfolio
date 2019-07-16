@@ -815,14 +815,14 @@ a {
     font-size: 6rem;
     text-transform: uppercase;
     transition: all 0.4s ease-out; }
-    @media only screen and (min-width: 56.25em) {
+    @media only screen and (min-width: 43.75em) {
       .project__new-project {
         font-size: 7rem;
         visibility: hidden;
         opacity: 0; } }
     @media only screen and (min-width: 75em) {
       .project__new-project {
-        font-size: 4rem; } }
+        font-size: 3.5rem; } }
   .project__overlay:hover .project__new-project {
     visibility: visible;
     opacity: 0.6; }
