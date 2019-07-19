@@ -20,11 +20,60 @@ $background-opacity: 0.9;
     transition: all 0.4s ease-out;
 }
 
+// MEDIA QUERY MANAGER
+/*
+[0 - 600px]:    is where our normal styles apply
+600 +:          tablet-up
+900 +:          desktop-sm-up
+1200 +:         desktop-md-up
+1800px +:       desktop-lg-up
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint==tablet-up {
+        @media only screen and (min-width: 31.25em) {
+            @content
+        }
+
+        ; //500px
+    }
+
+    @if $breakpoint==desktop-sm-up {
+        @media only screen and (min-width: 43.75em) {
+            @content
+        }
+
+        ; //700px
+    }
+
+    @if $breakpoint==desktop-md-up {
+        @media only screen and (min-width: 56.25em) {
+            @content
+        }
+
+        ; //900px
+    }
+
+    @if $breakpoint==desktop-lg-up {
+        @media only screen and (min-width: 75em) {
+            @content
+        }
+
+        ; //1200
+    }
+}
+
+
 //Basic reset
 
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px
+
+    @include respond(desktop-md-up) {
+        font-size: 68.75%; // 1rem = 10px
+    }
 }
 
 body {
@@ -66,4 +115,9 @@ ul {
 img {
     max-width: 100%;
     height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
