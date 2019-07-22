@@ -419,8 +419,9 @@ a {
     .burger {
       right: 3.6rem;
       top: 3.6rem; } }
-  .burger:hover {
-    opacity: 0.8; }
+  .burger:hover, .burger:focus {
+    opacity: 0.8;
+    outline: none; }
   .burger__wrapper {
     width: 4rem;
     height: 2.4rem;
@@ -492,9 +493,10 @@ a {
   border: 1px solid #eece1a;
   color: #eece1a;
   transition: all 0.4s ease-out; }
-  .btn:hover {
+  .btn:hover, .btn:focus {
     background-color: #eece1a;
-    color: #444; }
+    color: #444;
+    outline: none; }
 
 .icons {
   width: 100%;
