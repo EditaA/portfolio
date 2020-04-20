@@ -16,8 +16,10 @@
         top: 3.6rem;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         opacity: 0.8;
+        outline: none;
     }
 
 
@@ -133,9 +135,11 @@
     @include easeOut;
 
 
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: $color-secondary;
         color: $color-primary;
+        outline: none;
     }
 }
 

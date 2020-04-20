@@ -51,7 +51,7 @@
 
         <div class="contact">
             <div class="contact__form">
-                <form action="#" class="form">
+                <form class="form">
                     <div class="form__group">
                         <input type="text" class="form__input" placeholder="Full name" id="name" required>
                         <label for="name" class="form__label">Full name</label>
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="form__group">
-                        <button class=btn>Send <i class="far fa-paper-plane m-l-10"></i> </button>
+                        <button type="submit" class=btn>Send <i class="far fa-paper-plane m-l-10"></i> </button>
                     </div>
 
                 </form>
@@ -128,6 +128,12 @@
     <footer class="footer">
         copyright © 2019
     </footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-database.js"></script>
 
     <script src="./js/main.js"></script>
 </body>
